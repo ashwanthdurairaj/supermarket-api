@@ -22,6 +22,10 @@ app.use('/api/applyDiscount', require('./backend/routes/applyDiscount'))
 app.use('/api/revokeDiscount', require('./backend/routes/revokeDiscount'))
 app.use(errorHandler); //middleware
 
+app.get('/', (req, res) => {
+    res.send('API set to Production')
+})
+
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 })
