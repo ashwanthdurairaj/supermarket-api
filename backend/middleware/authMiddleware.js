@@ -15,7 +15,7 @@ const protect = asyncHandler(async (req, res, next) => {
             //and splits into two indexes, first idex 'bearer', second index token
             console.log(token)
             //verify token
-            const decoded = jwt.verify(token, 'abc123')
+            const decoded = jwt.verify(token, `abc123`)
 
             //get user from the token
             req.user = await User.find({_id:decoded.id}).select('-password')
