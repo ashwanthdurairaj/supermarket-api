@@ -70,7 +70,7 @@ const getMe = asyncHandler(async(req, res) => {
 // @route   GET /api/users/me
 // @access  Private
 const generateToken = (id) => {
-    return jwt.sign({ id }, process.env.JWT_SECRET, {
+    return jwt.sign({ id }, 'abc123', {
         expiresIn: '30d',
     })
 }
