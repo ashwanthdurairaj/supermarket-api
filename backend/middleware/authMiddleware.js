@@ -6,14 +6,14 @@ const User = require('../model/userModel');
 const protect = asyncHandler(async (req, res, next) => {
     let token
     //check authorization object of http headers
-    console.log('ranjithame',req.headers.authorization)
+    // console.log('ranjithame',req.headers.authorization)
     if(req.headers.authorization  && req.headers.authorization.startsWith('Bearer ')) {
         try
         {
             //get token from header
             token = req.headers.authorization.split(' ')[1] //get the token from bearer which bears the token
             //and splits into two indexes, first idex 'bearer', second index token
-        
+            console.log(token)
             //verify token
             const decoded = jwt.verify(token, 'abc123')
 
